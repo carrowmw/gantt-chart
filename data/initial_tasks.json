@@ -1,0 +1,98 @@
+{
+    "General Development": {
+        "Case study scoping": {
+            "begin": "Jan-24",
+            "duration": 1
+        },
+        "Graph neural networks": {
+            "begin": "Jan-24",
+            "duration": 1
+        },
+        "Stakeholder engagement": {
+            "begin": "Jan-24",
+            "duration": 1
+        },
+        "International placement": {
+            "begin": "Feb-26",
+            "duration": 2
+        }
+    },
+    "Objective 1": {
+        "Reading O-1": {
+            "begin": "Feb-24",
+            "duration": 1
+        },
+        "Developing O-1": {
+            "begin": "Mar-24",
+            "duration": 1
+        },
+        "Writing-up O-1": {
+            "begin": "Apr-24",
+            "duration": 2
+        },
+        "Peer review feedback O-1": {
+            "begin": "Dec-24",
+            "duration": 1
+        }
+    },
+    "Objective 2": {
+        "Reading O-2": {
+            "begin": "Jun-24",
+            "duration": 1
+        },
+        "Developing O-2": {
+            "begin": "Jul-24",
+            "duration": 2
+        },
+        "Writing-up O-2": {
+            "begin": "Sep-24",
+            "duration": 2
+        },
+        "Peer review feedback O-2": {
+            "begin": "May-26",
+            "duration": 1
+        }
+    },
+    "Objective 3": {
+        "Reading O-3": {
+            "begin": "Nov-24",
+            "duration": 2
+        },
+        "Developing O-3": {
+            "begin": "Jan-25",
+            "duration": 2
+        },
+        "Writing-up O-3": {
+            "begin": "Mar-25",
+            "duration": 2
+        },
+        "Peer review feedback O-3": {
+            "begin": "Oct-25",
+            "duration": 1
+        }
+    },
+    "Objective 4": {
+        "Reading O-4": {
+            "begin": "May-25",
+            "duration": 2
+        },
+        "Developing O-4": {
+            "begin": "Jul-25",
+            "duration": 2
+        },
+        "Writing-up O-4": {
+            "begin": "Sep-25",
+            "duration": 2
+        },
+        "Peer review feedback O-4": {
+            "begin": "Nov-25",
+            "duration": 1
+        }
+    },
+    "Thesis": {
+        "Writing-up thesis": {
+            "begin": "Jun-26",
+            "duration": 4
+        }
+    }
+}

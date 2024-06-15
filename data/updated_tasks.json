@@ -1,0 +1,114 @@
+{
+    "General Development": {
+        "Case study scoping": {
+            "begin": "Jan-24",
+            "duration": 1
+        },
+        "Graph neural networks": {
+            "begin": "Jan-24",
+            "duration": 1
+        },
+        "Stakeholder engagement": {
+            "begin": "Jan-24",
+            "duration": 1
+        },
+        "International placement": {
+            "begin": "Feb-26",
+            "duration": 2
+        },
+        "GISRUK Conference": {
+            "begin": "Apr-24",
+            "duration": 1
+        },
+        "DataCamp Courses": {
+            "begin": "May-24",
+            "duration": 4
+        }
+    },
+    "Objective 1": {
+        "Reading O-1": {
+            "begin": "Feb-24",
+            "duration": 4
+        },
+        "Developing O-1": {
+            "begin": "Mar-24",
+            "duration": 4
+        },
+        "Writing-up O-1": {
+            "begin": "Apr-24",
+            "duration": 4
+        },
+        "Peer review feedback O-1": {
+            "begin": "May-25",
+            "duration": 4
+        }
+    },
+    "Objective 2": {
+        "Reading O-2": {
+            "begin": "Jul-24",
+            "duration": 4
+        },
+        "Developing O-2": {
+            "begin": "Sep-24",
+            "duration": 4
+        },
+        "Writing-up O-2": {
+            "begin": "Oct-24",
+            "duration": 4
+        },
+        "Peer review feedback O-2": {
+            "begin": "Aug-26",
+            "duration": 1
+        }
+    },
+    "Objective 3": {
+        "Reading O-3": {
+            "begin": "Feb-25",
+            "duration": 3
+        },
+        "Developing O-3": {
+            "begin": "Mar-25",
+            "duration": 4
+        },
+        "Writing-up O-3": {
+            "begin": "Apr-25",
+            "duration": 4
+        },
+        "Peer review feedback O-3": {
+            "begin": "Feb-26",
+            "duration": 1
+        }
+    },
+    "Objective 4": {
+        "Reading O-4": {
+            "begin": "Aug-25",
+            "duration": 4
+        },
+        "Developing O-4": {
+            "begin": "Sep-25",
+            "duration": 4
+        },
+        "Writing-up O-4": {
+            "begin": "Oct-25",
+            "duration": 4
+        },
+        "Peer review feedback O-4": {
+            "begin": "Aug-26",
+            "duration": 1
+        }
+    },
+    "Thesis": {
+        "Writing-up Thesis": {
+            "begin": "Apr-26",
+            "duration": 6
+        },
+        "Viva Prep": {
+            "begin": "Sep-26",
+            "duration": 1
+        },
+        "Thesis Corrections": {
+            "begin": "Oct-26",
+            "duration": 1
+        }
+    }
+}

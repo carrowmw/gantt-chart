@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "gantt-chart"
+version = "0.1.0"
+description = "make simple gantt charts in python. Suitable for phd students and others working independently on long projects, who don't want to pay for project management software, but want professional looking gantt charts."
+authors = ["Carrow Morris-Wiltshire"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "gantt-chart", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
