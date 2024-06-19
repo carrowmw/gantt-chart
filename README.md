@@ -1,6 +1,6 @@
 # Description
 
-This project, phd-project, is (will be) a comprehensive program designed for building, testing, and deploying machine learning models fed on urban observatory data. Follow the instructions below to set up and run the project.
+An over-engineered gantt chart for phd projects (or other long and individual projects). Includes options for adding interruptions and different views of the gantt chart so that you can download to a pdf and send to your supervisors. Alternatively you can share the web-app version and instruction for setting that up are included.
 
 ## Installation
 
@@ -17,7 +17,7 @@ Before you begin, ensure you have the following installed on your system:
 First, clone the project repository to your local machine using Git. Open a terminal and run:
 
 ```sh
-git clone https://github.com/carrowmw/phd-project
+git clone https://github.com/carrowmw/phd-gantt-chart
 cd phd-project
 ```
 

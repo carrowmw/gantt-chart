@@ -1,0 +1,96 @@
+/* General font settings for the entire application */
+body {
+    font-family: sans-serif, Arial, Helvetica
+}
+
+/* Specific settings for Dash components */
+.dash-dropdown,
+.dash-checklist {
+    font-family: sans-serif, Arial, Helvetica;
+    font-size: 20px;
+    /* Adjust the size as needed */
+}
+
+/* Styling the graph fonts */
+.dash-graph text {
+    font-family: sans-serif, Arial, Helvetica;
+}
+
+.column-element {
+    height: 100%;
+    width: 47.5%;
+    /* border: 2px solid green; */
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.dash-dropdown {
+    margin-left: 30px;
+}
+
+.tab-element {
+    height: 97vh;
+    width: calc(50vw - auto);
+    /* border: 2px solid blue; */
+    padding: 0;
+    margin: 0;
+}
+
+.tabs-element {
+    height: 100%;
+    width: 100%;
+    /* border: 2px solid purple; */
+    padding: 0;
+    margin: 0;
+}
+
+.row-element {
+    height: 100%;
+    width: 100%;
+    /* border: 2px solid red; */
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.dropdown-element {
+    height: 2vh;
+    width: 30vw;
+    /* border: 2px solid orange; */
+    padding: auto;
+    margin: auto;
+}
+
+.container-element {
+    height: 100%;
+    width: 100%;
+    /* border: 2px solid yellow; */
+    padding: 0;
+    margin: 0;
+}
+
+.card-element {
+    height: 10vh;
+    width: 20vw;
+    /* border: 2px solid pink; */
+    align-items: left;
+    padding: auto;
+    margin: auto;
+}
+
+.card-text {
+    font-size: 1.1em;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+}
+
+.card-title {
+    font-size: 1em;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+}

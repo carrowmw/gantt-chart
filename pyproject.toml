@@ -5,10 +5,14 @@ description = "make simple gantt charts in python. Suitable for phd students and
 authors = ["Carrow Morris-Wiltshire"]
 license = "MIT"
 readme = "README.md"
-packages = [{ include = "gantt-chart", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+poetry-env-test = "^0.1.1"
+dash = "^2.17.1"
+pandas = "^2.2.2"
+matplotlib = "^3.9.0"
+dash-bootstrap-components = "^1.6.0"
 
 
 [build-system]
