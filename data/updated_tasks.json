@@ -32,42 +32,42 @@
         },
         "Developing O-1": {
             "begin": "Mar-24",
-            "duration": 4
+            "duration": 5
         },
         "Writing-up O-1": {
-            "begin": "Apr-24",
-            "duration": 4
+            "begin": "May-24",
+            "duration": 7
         },
         "Peer review feedback O-1": {
             "begin": "May-25",
-            "duration": 4
+            "duration": 1
         }
     },
     "Objective 2": {
         "Reading O-2": {
-            "begin": "Jul-24",
-            "duration": 4
+            "begin": "Oct-24",
+            "duration": 3
         },
         "Developing O-2": {
-            "begin": "Sep-24",
-            "duration": 4
+            "begin": "Oct-24",
+            "duration": 5
         },
         "Writing-up O-2": {
-            "begin": "Oct-24",
+            "begin": "Jan-25",
             "duration": 4
         },
         "Peer review feedback O-2": {
-            "begin": "Aug-26",
+            "begin": "Aug-25",
             "duration": 1
         }
     },
     "Objective 3": {
         "Reading O-3": {
-            "begin": "Feb-25",
+            "begin": "Mar-25",
             "duration": 3
         },
         "Developing O-3": {
-            "begin": "Mar-25",
+            "begin": "Apr-25",
             "duration": 4
         },
         "Writing-up O-3": {

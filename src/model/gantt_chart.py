@@ -4,27 +4,18 @@ Create a Gantt chart. It uses the initial tasks, updated tasks, interuptions and
 """
 
 from datetime import datetime
+import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 from src.utils.data_loading import load_data, modify_df_from_interuptions
 
 
 class GanttChart:
-    """
-    Class to create a Gantt chart with overlay of project progress. It uses the initial tasks, updated tasks, interruptions and milestones data to create the chart.
-
-    Parameters:
-    None
-
-    Returns:
-    None
-    """
-
     def __init__(self):
-        self.df_initial = load_data("data/initial_tasks.json")
-        self.df_updated = load_data("data/updated_tasks.json")
-        self.df_interuptions = load_data("data/interuptions.json")
-        self.df_milestones = load_data("data/milestones.json")
+        self.df_initial = load_data("data/initial_tasks.json").iloc[::-1]
+        self.df_updated = load_data("data/updated_tasks.json").iloc[::-1]
+        self.df_interuptions = load_data("data/interuptions.json").iloc[::-1]
+        self.df_milestones = load_data("data/milestones.json").iloc[::-1]
 
     def _create_base_gantt_chart(
         self,
@@ -33,18 +24,6 @@ class GanttChart:
         include_milestones=True,
         include_interruptions=True,
     ):
-        """
-        Private method to create the base Gantt chart.
-
-        Parameters:
-        df: pd.DataFrame
-        include_milestones: bool
-        include_interruptions: bool
-
-        Returns:
-        fig: plotly.graph_objs._figure.Figure
-        """
-        # Create the initial Gantt chart
         fig = px.timeline(
             df,
             x_start="Begin",
@@ -55,21 +34,24 @@ class GanttChart:
         )
 
         if include_updates:
-            # Add the updated tasks as separate traces with the same legend name
-            for idx, row in self.df_updated.iterrows():
+            df_updated = self.df_updated.copy()
+            if include_interruptions:
+                df_updated = modify_df_from_interuptions(
+                    df_updated, self.df_interuptions
+                )
+            for idx, row in df_updated.iterrows():
                 fig.add_trace(
                     go.Scatter(
                         x=[row["Begin"], row["End"]],
                         y=[row["Task"], row["Task"]],
                         mode="lines",
                         line=dict(color="rgba(255, 0, 0, 0.5)", width=5),
-                        name="Updatee Task",
-                        showlegend=idx == 0,  # Only show legend for the first task
+                        name="Updated Tasks",
+                        showlegend=idx == 0,
                     )
                 )
 
         if include_interruptions:
-            # Add the interruptions as separate traces with the same legend name
             for idx, row in self.df_interuptions.iterrows():
                 fig.add_trace(
                     go.Scatter(
@@ -78,11 +60,10 @@ class GanttChart:
                         mode="lines",
                         line=dict(color="rgba(0, 0, 0, 0.5)", width=5),
                         name="Interruption",
-                        showlegend=idx == 0,  # Only show legend for the first task
+                        showlegend=idx == 0,
                     )
                 )
 
-        # Add the milestones as a single trace if included
         if include_milestones:
             fig.add_trace(
                 go.Scatter(
@@ -94,7 +75,6 @@ class GanttChart:
                 )
             )
 
-        # Add a vertical line for today's date
         today_date = datetime.now().strftime("%Y-%m-%d")
         fig.add_shape(
             dict(
@@ -109,31 +89,27 @@ class GanttChart:
             )
         )
 
-        # Add range slider
         fig.update_layout(xaxis=dict(rangeslider=dict(visible=True), type="date"))
 
-        # Calculate the height dynamically based on the number of tasks
-        num_tasks = len(df["Task"].unique())
-        task_height = 50  # Height per task in pixels
+        if include_updates:
+            tasks = df["Task"]._append(self.df_updated["Task"])
+            num_tasks = len(tasks.unique())
+        else:
+            num_tasks = len(df["Task"].unique())
+        if include_interruptions:
+            num_tasks += len(self.df_interuptions["Task"].unique())
+        if include_milestones:
+            num_tasks += len(self.df_milestones["Task"].unique())
+        task_height = 30
         fig_height = num_tasks * task_height
 
-        # Update the layout to set the height
         fig.update_layout(height=fig_height)
 
         return fig
 
     def create_baseline_gantt_chart(
-        self, include_interruptions=False, include_milestones=True
+        self, include_interruptions=True, include_milestones=True
     ):
-        """
-        Create a Gantt chart with overlay of initial tasks and optionally include interruptions.
-
-        Parameters:
-        include_interruptions: bool
-
-        Returns:
-        gantt_chart: plotly.graph_objs._figure.Figure
-        """
         df = self.df_initial.copy()
         if include_interruptions:
             df = modify_df_from_interuptions(df, self.df_interuptions)
@@ -145,17 +121,8 @@ class GanttChart:
         )
 
     def create_gantt_chart_with_slippage(
-        self, include_interruptions=False, include_milestones=True
+        self, include_interruptions=True, include_milestones=True
     ):
-        """
-        Create a Gantt chart with overlay of project progress tasks and optionally include interruptions.
-
-        Parameters:
-        include_interruptions: bool
-
-        Returns:
-        gantt_chart: plotly.graph_objs._figure.Figure
-        """
         df = self.df_initial.copy()
         if include_interruptions:
             df = modify_df_from_interuptions(df, self.df_interuptions)
@@ -167,17 +134,8 @@ class GanttChart:
         )
 
     def create_updated_gantt_chart(
-        self, include_interruptions=False, include_milestones=True
+        self, include_interruptions=True, include_milestones=True
     ):
-        """
-        Create a Gantt chart with overlay of updated tasks and optionally include interruptions.
-
-        Parameters:
-        include_interruptions: bool
-
-        Returns:
-        gantt_chart: plotly.graph_objs._figure.Figure
-        """
         df = self.df_updated.copy()
         if include_interruptions:
             df = modify_df_from_interuptions(df, self.df_interuptions)

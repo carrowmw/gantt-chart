@@ -1,12 +1,20 @@
-import dash
-from dash import html, dcc
-from dash.dependencies import Input, Output
+from dash import Dash, html, dcc, dependencies
 import dash_bootstrap_components as dbc
 from src.model.gantt_chart import GanttChart
 
+from dash import Dash, html
+
+
+# def serve_app():
+#     app = Dash(__name__)
+
+#     app.layout = html.Div("Hello, World!")
+
+#     return app
+
 
 def serve_app():
-    app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+    app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
     gantt_chart = GanttChart()
 
@@ -37,7 +45,7 @@ def serve_app():
                         "value": "include_interruptions",
                     },
                 ],
-                value=["include_interruptions", "include_milestones"],
+                value=["include_interruptions"],
             ),
             dcc.Checklist(
                 id="milestones-checklist",
@@ -68,10 +76,12 @@ def serve_app():
     app.layout = html.Div(children=[top_row, bottom_row])
 
     @app.callback(
-        Output("gantt-chart", "figure"),
-        Input("chart-dropdown", "value"),
-        Input("interruptions-checklist", "value"),
-        Input("milestones-checklist", "value"),
+        dependencies.Output("gantt-chart", "figure"),
+        [
+            dependencies.Input("chart-dropdown", "value"),
+            dependencies.Input("interruptions-checklist", "value"),
+            dependencies.Input("milestones-checklist", "value"),
+        ],
     )
     def update_chart(selected_chart, interruptions_checklist, milestones_checklist):
         include_interruptions = "include_interruptions" in interruptions_checklist

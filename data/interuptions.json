@@ -1,8 +1,12 @@
 {
     "Interuptions": {
-        "6-month TIN placement": {
-            "begin": "Nov-24",
-            "duration": 6
+        "DSTL Placement": {
+            "begin": "Jul-25",
+            "duration": 3
+        },
+        "Complex Systems Summer School": {
+            "begin": "Jun-25",
+            "duration": 1
         }
     }
 }
